@@ -1,0 +1,26 @@
+---
+import Projects from "./Projects.astro";
+
+
+---
+<div class="flex flex-wrap items-center justify-center">
+
+  <img src="/public/images/caret-left.png" alt="img Left" class=" hidden md:block w-8 h-8 mr-4 font-medium bg-white p-1 rounded-full shadow-md cursor-pointer transition-transform duration-300 hover:bg-gray-100 hover:scale-110">
+
+<div class="flex items-center justify-center ">
+
+  <Projects
+  id="1" 
+  imgSrc="/public/images/prueba.png"
+  title="El primer portfolio"
+  description="Este fue el primer portfolio que hice en el primer año de DAM."   
+  projectPath="https://lbaca.netlify.app"
+  />
+
+</div>
+
+<img src="/public/images/caret-left.png" alt="img Left" class=" mt-5 md:mt-0 md:hidden w-8 h-8 mr-4 font-medium bg-white p-1 rounded-full shadow-md cursor-pointer transition-transform duration-300 hover:bg-gray-100 hover:scale-110">
+
+<img src="/public/images/caret-right.png" alt="img Right" class="mt-5 md:mt0 size-8 ml-4 font-medium bg-white p-1 rounded-full shadow-md cursor-pointer transition-transform duration-300 hover:bg-gray-100 hover:scale-110">
+
+</div>
