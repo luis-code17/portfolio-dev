@@ -1,26 +1,66 @@
 ---
-import Projects from "./Projects.astro";
+import ProjectsContainer from "./ProjectsContainer.astro";
 
+// Lista de proyectos
+const projects = [
+  {
+    id: "0",
+    imgSrc: "/images/topogame.png",
+    title: "Topo Game",
+    description: "Una de las prácticas para utilizar JS en 1r DAM.",
+    projectPath: "https://lbaca.netlify.app/whac-a-mole/whac-a-mole",
+  },
+  {
+    id: "1",
+    imgSrc: "/images/piano.png",
+    title: "Piano",
+    description: "Otra práctica para usar JS en 1r DAM. Consiste en almacenar las notas para después reproducirlas en el mismo orden.",
+    projectPath: "https://lbaca.netlify.app/piano/piano",
+  },
+];
 
+let currentIndex = 0; // Índice actual del proyecto que se está mostrando
+
+// Funciones para navegar en el carrusel
+function nextProject() {
+  currentIndex = (currentIndex + 1) % projects.length;
+}
+
+function prevProject() {
+  currentIndex = (currentIndex - 1 + projects.length) % projects.length;
+}
 ---
-<div class="flex flex-wrap items-center justify-center">
 
-  <img src="/images/caret-left.png" alt="img Left" class=" hidden md:block w-8 h-8 mr-4 font-medium bg-white p-1 rounded-full shadow-md cursor-pointer transition-transform duration-300 hover:bg-gray-100 hover:scale-110">
+<div class="flex items-center justify-center">
+  <button aria-label="Previous Project" id="prevPC" class="flex items-center" onClick={prevProject}>
+    <img 
+      loading="lazy"
+      src="/images/caret-left.png" 
+      alt="Previous Project" 
+      class="hidden md:block w-8 h-8 mr-4 font-medium bg-white p-1 rounded-full shadow-md transition-transform duration-300 hover:bg-gray-100 hover:scale-110" 
+    />
+  </button>
+  
+  <div class="flex items-center justify-center">
+    <!-- Mostrar el proyecto actual en función del índice actual -->
+    <ProjectsContainer id={projects[currentIndex].id} imgSrc={projects[currentIndex].imgSrc} title={projects[currentIndex].title} description={projects[currentIndex].description} projectPath={projects[currentIndex].projectPath} />
+  </div>
 
-<div class="flex items-center justify-center ">
+  <button aria-label="Previous Project Mobile" id="prevMobile" class="flex items-center" onClick={prevProject}>
+    <img 
+      loading="lazy"
+      src="/images/caret-left.png" 
+      alt="Previous Project" 
+      class="mt-5 md:mt-0 md:hidden w-8 h-8 mr-4 font-medium bg-white p-1 rounded-full shadow-md transition-transform duration-300 hover:bg-gray-100 hover:scale-110" 
+    />
+  </button>
 
-  <Projects
-  id="1" 
-  imgSrc="/images/prueba.png"
-  title="El primer portfolio"
-  description="Este fue el primer portfolio que hice en el primer año de DAM."   
-  projectPath=""
-  />
-
-</div>
-
-<img src="/images/caret-left.png" alt="img Left" class=" mt-5 md:mt-0 md:hidden w-8 h-8 mr-4 font-medium bg-white p-1 rounded-full shadow-md cursor-pointer transition-transform duration-300 hover:bg-gray-100 hover:scale-110">
-
-<img src="/images/caret-right.png" alt="img Right" class="mt-5 md:mt0 size-8 ml-4 font-medium bg-white p-1 rounded-full shadow-md cursor-pointer transition-transform duration-300 hover:bg-gray-100 hover:scale-110">
-
+  <button aria-label="Next Project" id="next" class="flex items-center" onClick={nextProject}>
+    <img 
+      loading="lazy"
+      src="/images/caret-right.png" 
+      alt="Next Project" 
+      class="mt-5 md:mt0 size-8 ml-4 font-medium bg-white p-1 rounded-full shadow-md transition-transform duration-300 hover:bg-gray-100 hover:scale-110" 
+    />
+  </button>
 </div>

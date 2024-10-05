@@ -1,0 +1,16 @@
+[
+  {
+    "id": "0",
+    "imgSrc": "/images/topogame.png",
+    "title": "Topo Game",
+    "description": "Una de las prácticas para utilizar JS en 1r DAM.",
+    "projectPath": "https://lbaca.netlify.app/whac-a-mole/whac-a-mole"
+  },
+  {
+    "id": "1",
+    "imgSrc": "/images/piano.png",
+    "title": "Piano",
+    "description": "Otra práctica para usar JS en 1r DAM. Consiste en almacenar las notas para después reproducirlas en el mismo orden.",
+    "projectPath": "https://lbaca.netlify.app/piano/piano"
+  }
+]
