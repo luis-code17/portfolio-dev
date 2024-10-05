@@ -32,7 +32,7 @@ function prevProject() {
 ---
 
 <div class="flex items-center justify-center">
-  <button aria-label="Previous Project" id="prevPC" class="flex items-center" onClick={prevProject}>
+  <button aria-label="Previous Project" id="prevPC" class="flex items-center" >
     <img 
       loading="lazy"
       src="/images/caret-left.png" 
@@ -46,7 +46,7 @@ function prevProject() {
     <ProjectsContainer id={projects[currentIndex].id} imgSrc={projects[currentIndex].imgSrc} title={projects[currentIndex].title} description={projects[currentIndex].description} projectPath={projects[currentIndex].projectPath} />
   </div>
 
-  <button aria-label="Previous Project Mobile" id="prevMobile" class="flex items-center" onClick={prevProject}>
+  <button aria-label="Previous Project Mobile" id="prevMobile" class="flex items-center" >
     <img 
       loading="lazy"
       src="/images/caret-left.png" 
@@ -55,7 +55,7 @@ function prevProject() {
     />
   </button>
 
-  <button aria-label="Next Project" id="next" class="flex items-center" onClick={nextProject}>
+  <button aria-label="Next Project" id="next" class="flex items-center">
     <img 
       loading="lazy"
       src="/images/caret-right.png" 
