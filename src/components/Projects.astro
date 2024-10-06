@@ -10,7 +10,6 @@ const projectsData = await getCollection('projects'); // Obtener los proyectos
   {projectsData.length > 0 ? (
     projectsData.map((project) => (
       <ProjectsContainer 
-        key={project.data.id} // Clave única para cada proyecto
         id={project.data.id} 
         imgSrc={project.data.imgSrc} 
         title={project.data.title} 
