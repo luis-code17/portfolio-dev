@@ -1,17 +1,16 @@
 ---
 interface Props {
 	id: string;
-  imgSrc: string; 
-  title: string;  
-  description: string; 
-  projectPath: string;
+    imgSrc: string; 
+    title: string;  
+    description: string; 
+    projectPath: string;
 }
 const { id, imgSrc, title, description, projectPath } = Astro.props;
-
 ---
 
-<div id={id} class="w-11/12 max-w-sm rounded-lg overflow-hidden shadow-lg bg-white">
-  <img class="w-full  scale-110 transition-all duration-300 hover:scale-100" src={imgSrc} alt="img project">
+<div id={id} class="w-full max-w-xs rounded-lg overflow-hidden shadow-lg bg-white">
+  <img class="w-full  scale-110 transition-all duration-300 hover:scale-100" src={imgSrc} alt="img project" />
   <div class="px-6 py-4">
     <div class="font-bold text-xl mt-2 mb-2 text-bgColor">{title}</div>
     <p class="text-gray-700 text-base">

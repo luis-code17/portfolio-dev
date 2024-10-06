@@ -1,0 +1,24 @@
+---
+import ProjectsContainer from "./ProjectsContainer.astro";
+import { getCollection } from "astro:content";
+
+const projectsData = await getCollection('projects'); // Obtener los proyectos
+---
+
+<!-- Contenedor para los proyectos -->
+<div class="flex flex-wrap justify-center gap-4 p-4"> <!-- Asegúrate de que esta clase esté bien aplicada -->
+  {projectsData.length > 0 ? (
+    projectsData.map((project) => (
+      <ProjectsContainer 
+        key={project.data.id} // Clave única para cada proyecto
+        id={project.data.id} 
+        imgSrc={project.data.imgSrc} 
+        title={project.data.title} 
+        description={project.data.description} 
+        projectPath={project.data.projectPath} 
+      />
+    ))
+  ) : (
+    <p>No hay proyectos disponibles.</p>
+  )}
+</div>
