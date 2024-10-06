@@ -33,7 +33,7 @@ function prevProject() {
 
 <div class="flex flex-col md:flex-row items-center justify-center">
   <!-- Flecha Izquierda (Desktop) -->
-  <button aria-label="Previous Project" id="prevPC" onClick={prevProject} class="hidden md:flex items-center mb-4 md:mb-0">
+  <button aria-label="Previous Project" id="prevPC" onclick={prevProject} class="hidden md:flex items-center mb-4 md:mb-0">
     <img 
       loading="lazy"
       src="/images/caret-left.png" 
@@ -49,7 +49,7 @@ function prevProject() {
 
   <div class="flex flex-row">    
     <!-- Flecha Izquierda (Móvil) -->
-    <button aria-label="Previous Project Mobile" id="prevMobile" onClick={prevProject} class="flex md:hidden items-center">
+    <button aria-label="Previous Project Mobile" id="prevMobile" onclick={prevProject} class="flex md:hidden items-center">
       <img 
       loading="lazy"
       src="/images/caret-left.png" 
@@ -59,7 +59,7 @@ function prevProject() {
     </button>
     
     <!-- Flecha Derecha -->
-    <button aria-label="Next Project" id="next" onClick={nextProject} class="flex items-center">
+    <button aria-label="Next Project" id="next" onclick={nextProject} class="flex items-center">
       <img 
       loading="lazy"
       src="/images/caret-right.png" 
