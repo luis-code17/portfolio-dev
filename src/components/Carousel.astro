@@ -31,36 +31,41 @@ function prevProject() {
 }
 ---
 
-<div class="flex items-center justify-center">
-  <button aria-label="Previous Project" id="prevPC" class="flex items-center" >
+<div class="flex flex-col md:flex-row items-center justify-center">
+  <!-- Flecha Izquierda (Desktop) -->
+  <button aria-label="Previous Project" id="prevPC" onClick={prevProject} class="hidden md:flex items-center mb-4 md:mb-0">
     <img 
       loading="lazy"
       src="/images/caret-left.png" 
       alt="Previous Project" 
-      class="hidden md:block w-8 h-8 mr-4 font-medium bg-white p-1 rounded-full shadow-md transition-transform duration-300 hover:bg-gray-100 hover:scale-110" 
+      class="w-8 h-8 md:mr-4 font-medium bg-white p-1 rounded-full shadow-md transition-transform duration-300 hover:bg-gray-100 hover:scale-110" 
     />
   </button>
   
-  <div class="flex items-center justify-center">
-    <!-- Mostrar el proyecto actual en función del índice actual -->
+  <!-- Contenedor del Proyecto Actual -->
+  <div class="flex items-center justify-center mb-4 md:mb-0">
     <ProjectsContainer id={projects[currentIndex].id} imgSrc={projects[currentIndex].imgSrc} title={projects[currentIndex].title} description={projects[currentIndex].description} projectPath={projects[currentIndex].projectPath} />
   </div>
 
-  <button aria-label="Previous Project Mobile" id="prevMobile" class="flex items-center" >
-    <img 
+  <div class="flex flex-row">    
+    <!-- Flecha Izquierda (Móvil) -->
+    <button aria-label="Previous Project Mobile" id="prevMobile" onClick={prevProject} class="flex md:hidden items-center">
+      <img 
       loading="lazy"
       src="/images/caret-left.png" 
       alt="Previous Project" 
-      class="mt-5 md:mt-0 md:hidden w-8 h-8 mr-4 font-medium bg-white p-1 rounded-full shadow-md transition-transform duration-300 hover:bg-gray-100 hover:scale-110" 
-    />
-  </button>
-
-  <button aria-label="Next Project" id="next" class="flex items-center">
-    <img 
+      class="w-8 h-8 mr-4 font-medium bg-white p-1 rounded-full shadow-md transition-transform duration-300 hover:bg-gray-100 hover:scale-110" 
+      />
+    </button>
+    
+    <!-- Flecha Derecha -->
+    <button aria-label="Next Project" id="next" onClick={nextProject} class="flex items-center">
+      <img 
       loading="lazy"
       src="/images/caret-right.png" 
       alt="Next Project" 
-      class="mt-5 md:mt0 size-8 ml-4 font-medium bg-white p-1 rounded-full shadow-md transition-transform duration-300 hover:bg-gray-100 hover:scale-110" 
-    />
-  </button>
-</div>
+      class="w-8 h-8 ml-4 font-medium bg-white p-1 rounded-full shadow-md transition-transform duration-300 hover:bg-gray-100 hover:scale-110" 
+      />
+    </button>
+  </div>
+  </div>
