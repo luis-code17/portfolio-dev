@@ -7,6 +7,7 @@ export default {
       colors: {
         'bgColor': '#63e',
         'bistre': '#472C21',
+				'yellow': '#FFD700',
       },
     },
 	},

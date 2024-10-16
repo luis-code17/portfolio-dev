@@ -1,5 +1,5 @@
 ---
-import ProjectsContainer from "./ProjectsContainer.astro";
+import ProjectsContainer1 from "./ProjectsContainer1.astro";
 import { getCollection } from "astro:content";
 
 const projectsData = await getCollection('projects'); // Obtener los proyectos
@@ -9,7 +9,7 @@ const projectsData = await getCollection('projects'); // Obtener los proyectos
 <div class="flex flex-wrap justify-center gap-4 p-4"> <!-- Asegúrate de que esta clase esté bien aplicada -->
   {projectsData.length > 0 ? (
     projectsData.map((project) => (
-      <ProjectsContainer 
+      <ProjectsContainer1 
         id={project.data.id} 
         imgSrc={project.data.imgSrc} 
         title={project.data.title} 

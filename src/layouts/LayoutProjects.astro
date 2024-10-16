@@ -1,0 +1,57 @@
+---
+import Footer from '../components/Footer.astro';
+
+import '@fontsource-variable/lexend';
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Pagina dedicada para conocer mas a Luis Alejandro Baca Palma." />
+		<meta property="og:description" content="Pagina dedicada para conocer más a Luis Alejandro Baca Palma." />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/png" href="./images/programador.png" />
+		<title>{title}</title>
+	</head>
+	<body>
+			<slot />
+			<Footer />
+			<div class="fixed left-0 top-0 -z-10 h-full w-full">
+				<div class="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"></div>
+				</div>
+			</div>
+	</body>
+</html>
+<style is:global>
+	:root {	
+	}
+	html {
+		font-family: 'Lexend Variable', sans-serif;
+		scroll-behavior: smooth;
+		height: 100%;  
+		
+		
+	}
+
+	body {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+		height: 100%;
+	}
+
+	@media(prefers-reduced-motion: reduce) {
+		html{
+			animation-duration: 0.01ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: 0.01ms !important;
+			scroll-behavior: auto !important;			
+		}
+	}
+</style>
