@@ -1,0 +1,37 @@
+---
+interface Props {
+  imgSrc: string;
+  title: string;
+  titleColor: string;
+  type: string;
+  projectPath: string;
+}
+const { imgSrc, title, type, projectPath, titleColor, } = Astro.props;
+---
+
+  <div class="w-full max-w-sm border rounded-lg shadow bg-gray-800 border-gray-700">
+    <div class="flex justify-center p-4">
+      <img
+        src={imgSrc}
+        class="rounded-full ring-2 ring-blue-500 p-1 w-64 h-64"
+        alt={title}
+        transition:name={`img-${title}`}
+      />
+    </div>
+    <div class="px-5 pb-5">
+      <h5 class="text-xl font-semibold tracking-tight">
+        <span class={`text-${titleColor}`}>
+            • {title}
+        </span>
+      </h5>
+      <div class="flex items-center justify-between mt-4">
+        <span class="text-3xl font-bold text-white">{type}</span>
+        <a
+          href={projectPath}
+          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        >
+          Veure més
+        </a>
+      </div>
+    </div>
+</div>

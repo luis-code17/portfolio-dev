@@ -1,20 +1,21 @@
 ---
-import ProjectsContainer1 from "./ProjectsContainer1.astro";
+import ProjectsContainer2 from "./ProjectsContainer2.astro";
 import { getCollection } from "astro:content";
 
-const projectsData = await getCollection('projects1'); // Obtener los proyectos
+const projectsData = await getCollection('projects2'); // Obtener los proyectos
+
 ---
 
 <!-- Contenedor para los proyectos -->
 <div class="flex flex-wrap justify-center gap-4 p-4"> <!-- Asegúrate de que esta clase esté bien aplicada -->
   {projectsData.length > 0 ? (
     projectsData.map((project) => (
-      <ProjectsContainer1 
-        id={project.data.id} 
+      <ProjectsContainer2 
         imgSrc={project.data.imgSrc} 
         title={project.data.title} 
-        description={project.data.description} 
+        type={project.data.type} 
         projectPath={project.data.projectPath} 
+        titleColor={project.data.titleColor}
       />
     ))
   ) : (

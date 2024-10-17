@@ -5,7 +5,7 @@ import SectionContainer from '../components/SectionContainer.astro';
 import AboutMe from '../components/AboutMe.astro';
 import Timeline from '../components/Timeline.astro';
 import Projects1 from '../components/Projects1.astro';
-import Skills from '../components/Skills.astro';
+import Projects2 from '../components/Projects2.astro';
 
 ---
 
@@ -52,11 +52,9 @@ import Skills from '../components/Skills.astro';
 				Sobre mí
 			</h2>
 			<div class="block md:hidden mb-3">
-				<Skills />
 			</div>
 			<AboutMe />
 			<div class="hidden md:block  mt-3">
-				<Skills />
 			</div>
 
 		</SectionContainer>
@@ -66,16 +64,19 @@ import Skills from '../components/Skills.astro';
 				class="text-white/80 text-3xl ml-2 font-semibold mb-10 flex gap-x-3 items-center">
 				Proyectos
 			</h2>
-
-			<h3 class="text-white/80 text-2xl font-semibold flex gap-x-3 items-center justify-center">
+			
+			<div class="pb-20">
+				<h3 class=" text-white/80 mt-5 text-2xl font-semibold flex gap-x-3 items-center justify-center">
+					Proyectos 2DAM
+				</h3>
+				<Projects2 />
+			</div>
+				
+				<h3 class="text-white/80 text-2xl font-semibold flex gap-x-3 items-center justify-center">
 			Proyectos 1DAM
 			</h3>
 
 			<Projects1 />
-
-			<h3 class=" hidden text-white/80 mt-5 text-2xl font-semibold flex gap-x-3 items-center justify-center">
-				Proyectos 2DAM
-				</h3>
 
 
 		</SectionContainer>
