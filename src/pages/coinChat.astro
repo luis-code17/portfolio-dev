@@ -2,7 +2,8 @@
 import LayoutProjects from '../layouts/LayoutProjects.astro';
 import SectionContainer from '../components/SectionContainer.astro';
 import Badge from '../components/Badge.astro';
-import Code from '../components/icons/Code.astro'; 
+import ReturnBtn from '../components/ReturnBtn.astro';
+import GitHub from '../components/icons/GitHub.astro';
 ---
 
 <LayoutProjects title="CoinChat - Chat de criptomonedas">
@@ -31,7 +32,7 @@ import Code from '../components/icons/Code.astro';
 			 rel="noopener" 
 			 class="flex justify-center items-center m-5">
 				 <Badge>
-          <Code />
+          <GitHub />
            Code
         </Badge>
 			 </a>
@@ -55,6 +56,11 @@ import Code from '../components/icons/Code.astro';
           class="rounded-lg">
         </iframe>
       </div>
+
+      <div class="flex justify-center py-20">
+        <ReturnBtn />
+      </div>
+      
       
 
 
