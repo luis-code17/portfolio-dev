@@ -1,6 +1,8 @@
 ---
 import LayoutProjects from '../layouts/LayoutProjects.astro';
 import SectionContainer from '../components/SectionContainer.astro';
+import Badge from '../components/Badge.astro';
+import Code from '../components/icons/Code.astro'; 
 ---
 
 <LayoutProjects title="CoinChat - Chat de criptomonedas">
@@ -22,6 +24,17 @@ import SectionContainer from '../components/SectionContainer.astro';
         Bot de telegram. Siempre ofreciendo
         <span class="text-blue-500 opacity-80">el 100% en cada proyecto. </span>
       </h2>
+
+      <a
+			 href="https://github.com/PromileDev/CoinChat.git"
+			 target="_blank"
+			 rel="noopener" 
+			 class="flex justify-center items-center m-5">
+				 <Badge>
+          <Code />
+           Code
+        </Badge>
+			 </a>
 
     <div/>
     </SectionContainer>
