@@ -7,6 +7,9 @@ import Timeline from '../components/Timeline.astro';
 import Projects1 from '../components/Projects1.astro';
 import Projects2 from '../components/Projects2.astro';
 import Linkedin from '../components/icons/Linkedin.astro';
+import Stairs from '../components/icons/Stairs.astro';
+import Person from '../components/icons/Person.astro';
+import Apps from '../components/icons/Apps.astro';
 
 ---
 
@@ -42,6 +45,7 @@ import Linkedin from '../components/icons/Linkedin.astro';
 		<SectionContainer id="trajectory">
 			<h2
 				class="text-white/80 text-3xl ml-2 font-semibold  flex gap-x-3 items-center">
+				<Stairs />
 				Trayectoria
 			</h2>
 
@@ -53,6 +57,7 @@ import Linkedin from '../components/icons/Linkedin.astro';
 		<SectionContainer id='about'>
 			<h2
 				class="text-white/80 text-3xl ml-2 font-semibold mb-6 flex gap-x-3 items-center">
+				<Person />
 				Sobre mí
 			</h2>
 			<div class="block md:hidden mb-3">
@@ -66,18 +71,19 @@ import Linkedin from '../components/icons/Linkedin.astro';
 		<SectionContainer id="projects">
 			<h2
 				class="text-white/80 text-3xl ml-2 font-semibold mb-10 flex gap-x-3 items-center">
+				<Apps />
 				Proyectos
 			</h2>
 			
 			<div class="pb-20">
 				<h3 class=" text-white/80 mt-5 text-2xl font-semibold flex gap-x-3 items-center justify-center">
-					Proyectos 2DAM
+					• Proyectos 2DAM
 				</h3>
 				<Projects2 />
 			</div>
 				
-				<h3 class="text-white/80 text-2xl font-semibold flex gap-x-3 items-center justify-center">
-			Proyectos 1DAM
+			<h3 class="text-white/80 text-2xl font-semibold flex gap-x-3 items-center justify-center">
+				• Proyectos 1DAM
 			</h3>
 
 			<Projects1 />
