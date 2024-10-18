@@ -5,12 +5,13 @@ export default {
 	theme: {
 		extend: {
       colors: {
-        'bgColor': '#63e',
+        'bgColor': ' #7B5BFF',
         'bistre': '#472C21',
 				'yellow': '#FFD700',
 				'orangee': '#FFB347',
 				'silver': '#3C3C50',
 				'lowGray': '#E0E0E0',
+				'card1': '#3C3C50',
       },
     },
 	},
