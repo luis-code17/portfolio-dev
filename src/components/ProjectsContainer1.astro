@@ -1,6 +1,7 @@
 ---
+import Link from './icons/Link.astro';
 interface Props {
-	id: string;
+    id: string;
     imgSrc: string; 
     title: string;  
     description: string; 
@@ -10,9 +11,12 @@ const { id, imgSrc, title, description, projectPath } = Astro.props;
 ---
 
 <div id={id} class="w-full max-w-xs rounded-lg overflow-hidden shadow-lg bg-white">
-  <img class="w-full  scale-110 transition-all duration-300 hover:scale-100" src={imgSrc} alt="img project" />
+  <img class="w-full scale-110 transition-all duration-300 hover:scale-100" src={imgSrc} alt="img project" />
   <div class="px-6 py-4">
-    <div class="font-bold text-xl mt-2 mb-2 text-bgColor hover:text-blue-600"><a href={projectPath}>{title}</a></div>
+    <div class="font-bold text-xl mt-2 mb-2 text-bgColor hover:text-blue-600 flex items-center">
+      <Link />
+      <a href={projectPath} class="ml-2">{title}</a>
+    </div>
     <p class="text-gray-700 text-base">
       {description}
     </p>
