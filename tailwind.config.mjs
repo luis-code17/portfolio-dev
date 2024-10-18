@@ -8,7 +8,7 @@ export default {
         'bgColor': '#63e',
         'bistre': '#472C21',
 				'yellow': '#FFD700',
-				'orange': '#EE8700',
+				'orangee': '#EE8700',
       },
     },
 	},
