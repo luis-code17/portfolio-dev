@@ -1,0 +1,23 @@
+---
+import ProjectsContainerJ from "./ProjectsContainerJ.astro";
+import { getCollection } from "astro:content";
+
+const projectsData = await getCollection('projectsJava'); // Obtener los proyectos
+
+---
+
+<!-- Contenedor para los proyectos -->
+<div class="flex flex-wrap justify-center gap-4 p-4"> <!-- Asegúrate de que esta clase esté bien aplicada -->
+  {projectsData.length > 0 ? (
+    projectsData.map((project) => (
+      <ProjectsContainerJ 
+        url={project.data.url} 
+        title={project.data.title} 
+        github={project.data.github} 
+        description={project.data.description}
+      />
+    ))
+  ) : (
+    <p>No hay proyectos disponibles.</p>
+  )}
+</div>
