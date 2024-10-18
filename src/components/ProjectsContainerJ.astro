@@ -9,7 +9,7 @@ import GitHub from './icons/GitHub.astro';
 const { url, title, github, description, } = Astro.props;
 ---
 
-<div class="w-full max-w-xs rounded-lg overflow-hidden shadow-lg bg-gray-800">
+<div class="w-full max-w-xs rounded-lg overflow-hidden shadow-lg bg-silver">
   <iframe class="w-full scale-110 transition-all duration-300 hover:scale-100" width="560" height="315" src={url} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   <div class="px-6 py-4">
     <div class="flex items-center font-bold text-xl mt-3 mb-3 text-orangee hover:text-yellow">
@@ -18,7 +18,7 @@ const { url, title, github, description, } = Astro.props;
         {title}
       </a>
     </div>
-    <p class="text-gray-300 text-base">
+    <p class="text-lowGray text-base">
       {description}
     </p>
   </div> 
