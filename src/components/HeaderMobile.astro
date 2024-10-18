@@ -1,0 +1,103 @@
+--- 
+import Burger from './icons/Burger.astro'; 
+---
+
+<style>
+  .navbar-fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(31, 41, 55, 0.8); /* bg-gray-800 con 80% de opacidad */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+  }
+
+  .nav-bg {
+    background-color: rgba(31, 41, 55, 0.8); /* bg-gray-800 con 80% de opacidad para el menú superior */
+  }
+
+  .text-white {
+    color: white;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuButton = document.getElementById('menu-button');
+    const menuButton2 = document.getElementById('menu-button2');
+    const navbarText = document.getElementById('navbar-text');
+    const menuItems = document.querySelectorAll('#navbar-text a');
+
+    // Maneja el evento del botón de menú en móviles
+    if (menuButton && menuButton2 && navbarText) {
+      menuButton.addEventListener('click', () => {
+        menuButton.classList.add('hidden');
+        navbarText.classList.remove('hidden');
+        navbarText.classList.add('navbar-fullscreen');
+      });
+
+      menuButton2.addEventListener('click', () => {
+        menuButton.classList.remove('hidden');
+        navbarText.classList.add('hidden');
+        navbarText.classList.remove('navbar-fullscreen');
+      });
+
+      // Cerrar el menú al hacer clic en una opción
+      menuItems.forEach(item => {
+        item.addEventListener('click', () => {
+          menuButton.classList.remove('hidden');
+          navbarText.classList.add('hidden');
+          navbarText.classList.remove('navbar-fullscreen');
+        });
+      });
+    }
+  });
+</script>
+
+<!-- Menú solo para formato móvil -->
+<nav class="md:hidden nav-bg w-full fixed top-0 z-50">
+  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <div class="flex items-center">
+      <!-- Botón de menú hamburguesa -->
+      <button id="menu-button" class="text-white focus:outline-none">
+        <Burger />
+      </button>
+    </div>
+    <div id="navbar-text" class="hidden flex-col items-center justify-center">
+      <!-- Menú desplegable en pantalla completa -->
+      <ul class="w-full font-medium flex flex-col p-0 mt-0 border-0 space-y-4 items-center justify-center">
+        <li class="absolute top-0 right-0 p-4">
+          <!-- Botón para cerrar el menú -->
+          <a id="menu-button2" class="block py-2 px-3 text-white rounded cursor-pointer">
+            <Burger />
+          </a>
+        </li>
+        <li>
+          <a href="#home" class="block py-2 px-3 text-white rounded hover:text-blue-500">
+            Inicio
+          </a>
+        </li>
+        <li>
+          <a href="#trajectory" class="block py-2 px-3 text-white rounded hover:text-blue-500">
+            Trayectoria
+          </a>
+        </li>
+        <li>
+          <a href="#about" class="block py-2 px-3 text-white rounded hover:text-blue-500">
+            Sobre mí
+          </a>
+        </li>
+        <li>
+          <a href="#projects" class="block py-2 px-3 text-white rounded hover:text-blue-500">
+            Proyectos
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
