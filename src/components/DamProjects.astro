@@ -10,28 +10,39 @@ import Java from './icons/Java.astro';
   document.addEventListener('DOMContentLoaded', () => {
     const projectSelect = document.getElementById('projectSelect');
 
-    // Verificamos si projectSelect no es nulo
     if (projectSelect) {
       projectSelect.addEventListener('change', (e) => {
-        const value = (e.target as HTMLSelectElement).value; // Aseguramos que e.target sea HTMLSelectElement
+        const value = (e.target as HTMLSelectElement).value;
 
         // Seleccionamos todos los proyectos
         const projects1 = document.querySelector('.projects1');
         const projects2 = document.querySelector('.projects2');
         const projectsJava = document.querySelector('.projectsJava');
 
-        // Ocultar todos los proyectos inicialmente
-        if (projects1) projects1.classList.add('hidden');
-        if (projects2) projects2.classList.add('hidden');
-        if (projectsJava) projectsJava.classList.add('hidden');
+        // Ocultar todos los proyectos inicialmente con animación
+        if (projects1) {
+          projects1.classList.add('opacity-0', 'invisible', 'fixed');
+          projects1.classList.remove('opacity-100', 'relative');
+        }
+        if (projects2) {
+          projects2.classList.add('opacity-0', 'invisible', 'fixed');
+          projects2.classList.remove('opacity-100', 'relative');
+        }
+        if (projectsJava) {
+          projectsJava.classList.add('opacity-0', 'invisible', 'fixed');
+          projectsJava.classList.remove('opacity-100', 'relative');
+        }
 
-        // Mostrar el proyecto seleccionado
-        if (value === '1') {
-          if (projects1) projects1.classList.remove('hidden');
-        } else if (value === '2') {
-          if (projects2) projects2.classList.remove('hidden');
-        } else if (value === 'java') {
-          if (projectsJava) projectsJava.classList.remove('hidden');
+        // Mostrar el proyecto seleccionado con animación
+        if (value === '1' && projects1) {
+          projects1.classList.remove('invisible', 'fixed', 'opacity-0');
+          projects1.classList.add('opacity-100', 'relative');
+        } else if (value === '2' && projects2) {
+          projects2.classList.remove('invisible', 'fixed', 'opacity-0');
+          projects2.classList.add('opacity-100', 'relative');
+        } else if (value === 'java' && projectsJava) {
+          projectsJava.classList.remove('invisible', 'fixed', 'opacity-0');
+          projectsJava.classList.add('opacity-100', 'relative');
         }
       });
     }
@@ -49,9 +60,9 @@ import Java from './icons/Java.astro';
     <option value="1">1DAM</option>
   </select>
 </div>
-  
+
 <!-- Sección de Proyectos 2DAM -->
-<div class="pb-20 projects2 block"> <!-- Mostrar inicialmente -->
+<div class="pb-20 projects2 relative opacity-100 transition-opacity duration-1000"> <!-- Mostrar inicialmente -->
   <h3 class="text-white/80 mt-5 text-2xl font-semibold flex gap-x-3 items-center justify-center">
     • Proyectos 2DAM
   </h3>
@@ -59,7 +70,7 @@ import Java from './icons/Java.astro';
 </div>
 
 <!-- Sección de Proyectos Java -->
-<div class="pb-20 projectsJava hidden"> <!-- Ocultar inicialmente -->
+<div class="pb-20 projectsJava fixed opacity-0 invisible transition-opacity duration-1000"> <!-- Ocultar inicialmente -->
   <h3 class="text-white/80 mt-5 text-2xl font-semibold flex gap-x-3 items-center justify-center">
     • Proyectos Java <Java />
   </h3>
@@ -67,7 +78,7 @@ import Java from './icons/Java.astro';
 </div>
 
 <!-- Sección de Proyectos 1DAM -->
-<div class="pb-20 projects1 hidden"> <!-- Ocultar inicialmente -->
+<div class="pb-20 projects1 fixed opacity-0 invisible transition-opacity duration-1000"> <!-- Ocultar inicialmente -->
   <h3 class="text-white/80 text-2xl font-semibold flex gap-x-3 items-center justify-center">
     • Proyectos 1DAM
   </h3>  
