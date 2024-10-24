@@ -1,0 +1,66 @@
+---
+// Importa los componentes necesarios
+import Projects2 from './Projects2.astro'
+import ProjectsJava from './projectsJava.astro'
+import Projects1 from './Projects1.astro'
+import Java from './icons/Java.astro'
+---
+
+<script>
+  document.getElementById('projectSelect').addEventListener('change', (e) => {
+    const value = e.target.value;
+    const projects1 = document.querySelector('.projects1');
+    const projects2 = document.querySelector('.projects2');
+    const projectsJava = document.querySelector('.projectsJava');
+    
+    // Ocultar todos los proyectos inicialmente
+    projects1.classList.add('hidden');
+    projects2.classList.add('hidden');
+    projectsJava.classList.add('hidden');
+
+    // Mostrar el proyecto seleccionado
+    if (value === '1') {
+      projects1.classList.remove('hidden');
+    } else if (value === '2') {
+      projects2.classList.remove('hidden');
+    } else if (value === 'java') {
+      projectsJava.classList.remove('hidden');
+    }
+  });
+</script>
+
+<div class="flex items-center gap-x-4 mb-10">
+  <h2 class="text-white/80 text-3xl font-semibold ml-2 md:ml-0">
+    CFGS Desarrollo de Aplicaciones Multiplataforma
+  </h2>
+  
+  <select id="projectSelect" class="bg-gray-800 text-white p-2 rounded-md mr-2 md:mr-0">
+    <option value="2">2DAM</option>
+    <option value="java">Java</option>
+    <option value="1">1DAM</option>
+  </select>
+</div>
+  
+<!-- Sección de Proyectos 2DAM -->
+<div class="pb-20 projects2 block"> <!-- Mostramos inicialmente -->
+  <h3 class="text-white/80 mt-5 text-2xl font-semibold flex gap-x-3 items-center justify-center">
+    • Proyectos 2DAM
+  </h3>
+  <Projects2 />
+</div>
+
+<!-- Sección de Proyectos Java -->
+<div class="pb-20 projectsJava hidden"> <!-- Ocultamos inicialmente -->
+  <h3 class="text-white/80 mt-5 text-2xl font-semibold flex gap-x-3 items-center justify-center">
+    • Proyectos Java <Java />
+  </h3>
+  <ProjectsJava />
+</div>
+
+<!-- Sección de Proyectos 1DAM -->
+<div class="pb-20 projects1 hidden"> <!-- Ocultamos inicialmente -->
+  <h3 class="text-white/80 text-2xl font-semibold flex gap-x-3 items-center justify-center">
+    • Proyectos 1DAM
+  </h3>  
+  <Projects1 />
+</div>
