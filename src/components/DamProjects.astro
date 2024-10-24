@@ -1,30 +1,39 @@
 ---
 // Importa los componentes necesarios
-import Projects2 from './Projects2.astro'
-import ProjectsJava from './projectsJava.astro'
-import Projects1 from './Projects1.astro'
-import Java from './icons/Java.astro'
+import Projects2 from './Projects2.astro';
+import ProjectsJava from './projectsJava.astro';
+import Projects1 from './Projects1.astro';
+import Java from './icons/Java.astro';
 ---
 
 <script>
-  document.getElementById('projectSelect').addEventListener('change', (e) => {
-    const value = e.target.value;
-    const projects1 = document.querySelector('.projects1');
-    const projects2 = document.querySelector('.projects2');
-    const projectsJava = document.querySelector('.projectsJava');
-    
-    // Ocultar todos los proyectos inicialmente
-    projects1.classList.add('hidden');
-    projects2.classList.add('hidden');
-    projectsJava.classList.add('hidden');
+  document.addEventListener('DOMContentLoaded', () => {
+    const projectSelect = document.getElementById('projectSelect');
 
-    // Mostrar el proyecto seleccionado
-    if (value === '1') {
-      projects1.classList.remove('hidden');
-    } else if (value === '2') {
-      projects2.classList.remove('hidden');
-    } else if (value === 'java') {
-      projectsJava.classList.remove('hidden');
+    // Verificamos si projectSelect no es nulo
+    if (projectSelect) {
+      projectSelect.addEventListener('change', (e) => {
+        const value = (e.target as HTMLSelectElement).value; // Aseguramos que e.target sea HTMLSelectElement
+
+        // Seleccionamos todos los proyectos
+        const projects1 = document.querySelector('.projects1');
+        const projects2 = document.querySelector('.projects2');
+        const projectsJava = document.querySelector('.projectsJava');
+
+        // Ocultar todos los proyectos inicialmente
+        if (projects1) projects1.classList.add('hidden');
+        if (projects2) projects2.classList.add('hidden');
+        if (projectsJava) projectsJava.classList.add('hidden');
+
+        // Mostrar el proyecto seleccionado
+        if (value === '1') {
+          if (projects1) projects1.classList.remove('hidden');
+        } else if (value === '2') {
+          if (projects2) projects2.classList.remove('hidden');
+        } else if (value === 'java') {
+          if (projectsJava) projectsJava.classList.remove('hidden');
+        }
+      });
     }
   });
 </script>
@@ -42,7 +51,7 @@ import Java from './icons/Java.astro'
 </div>
   
 <!-- Sección de Proyectos 2DAM -->
-<div class="pb-20 projects2 block"> <!-- Mostramos inicialmente -->
+<div class="pb-20 projects2 block"> <!-- Mostrar inicialmente -->
   <h3 class="text-white/80 mt-5 text-2xl font-semibold flex gap-x-3 items-center justify-center">
     • Proyectos 2DAM
   </h3>
@@ -50,7 +59,7 @@ import Java from './icons/Java.astro'
 </div>
 
 <!-- Sección de Proyectos Java -->
-<div class="pb-20 projectsJava hidden"> <!-- Ocultamos inicialmente -->
+<div class="pb-20 projectsJava hidden"> <!-- Ocultar inicialmente -->
   <h3 class="text-white/80 mt-5 text-2xl font-semibold flex gap-x-3 items-center justify-center">
     • Proyectos Java <Java />
   </h3>
@@ -58,7 +67,7 @@ import Java from './icons/Java.astro'
 </div>
 
 <!-- Sección de Proyectos 1DAM -->
-<div class="pb-20 projects1 hidden"> <!-- Ocultamos inicialmente -->
+<div class="pb-20 projects1 hidden"> <!-- Ocultar inicialmente -->
   <h3 class="text-white/80 text-2xl font-semibold flex gap-x-3 items-center justify-center">
     • Proyectos 1DAM
   </h3>  
