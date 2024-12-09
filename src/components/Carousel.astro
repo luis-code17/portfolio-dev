@@ -1,0 +1,78 @@
+---
+import ProjectsContainer from "./ProjectsContainer.astro";
+import { getCollection } from "astro:content";
+
+const projectsData = await getCollection('projects'); // Obtener los proyectos
+let currentIndex = 0; // Índice del proyecto actual
+
+// Funciones para cambiar de proyecto
+function nextProject() {
+  currentIndex = (currentIndex + 1) % projectsData.length; // Aumenta el índice
+}
+
+function prevProject() {
+  currentIndex = (currentIndex - 1 + projectsData.length) % projectsData.length; // Disminuye el índice
+}
+---
+
+<div class="flex flex-col md:flex-row items-center justify-center">
+  <!-- Flecha Izquierda (Desktop) -->
+  <button 
+    aria-label="Previous Project" 
+    id="prevPC" 
+    class="hidden md:flex items-center mb-4 md:mb-0" 
+    onclick="prevProject"
+  >
+    <img 
+      loading="lazy"
+      src="/images/caret-left.png" 
+      alt="Previous Project" 
+      class="w-8 h-8 md:mr-4 font-medium bg-white p-1 rounded-full shadow-md transition-transform duration-300 hover:bg-gray-100 hover:scale-110" 
+    />
+  </button>
+  
+  <!-- Contenedor del Proyecto Actual -->
+  <div class="flex items-center justify-center mb-4 md:mb-0">
+    {projectsData.length > 0 && (
+      <ProjectsContainer 
+        id={projectsData[currentIndex].data.id} 
+        imgSrc={projectsData[currentIndex].data.imgSrc} 
+        title={projectsData[currentIndex].data.title} 
+        description={projectsData[currentIndex].data.description} 
+        projectPath={projectsData[currentIndex].data.projectPath} 
+      />
+    )}
+  </div>
+
+  <div class="flex flex-row">    
+    <!-- Flecha Izquierda (Móvil) -->
+    <button 
+      aria-label="Previous Project Mobile" 
+      id="prevMobile" 
+      class="flex md:hidden items-center" 
+      onclick="prevProject"
+    >
+      <img 
+        loading="lazy"
+        src="/images/caret-left.png" 
+        alt="Previous Project" 
+        class="w-8 h-8 mr-4 font-medium bg-white p-1 rounded-full shadow-md transition-transform duration-300 hover:bg-gray-100 hover:scale-110" 
+      />
+    </button>
+    
+    <!-- Flecha Derecha -->
+    <button 
+      aria-label="Next Project" 
+      id="next" 
+      class="flex items-center" 
+      onclick="nextProject" 
+    >
+      <img 
+        loading="lazy"
+        src="/images/caret-right.png" 
+        alt="Next Project" 
+        class="w-8 h-8 ml-4 font-medium bg-white p-1 rounded-full shadow-md transition-transform duration-300 hover:bg-gray-100 hover:scale-110" 
+      />
+    </button>
+  </div>
+</div>

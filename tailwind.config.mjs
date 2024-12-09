@@ -12,6 +12,7 @@ export default {
 				'silver': '#3C3C50',
 				'lowGray': '#E0E0E0',
 				'card1': '#3C3C50',
+				'mid': '#bdb0a1',
       },
     },
 	},
