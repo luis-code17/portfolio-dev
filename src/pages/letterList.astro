@@ -45,7 +45,7 @@ import GitHub from '../components/icons/GitHub.astro';
       class="text-white/80 text-3xl ml-2 font-semibold  flex gap-x-3 items-center"> 
       Video LetterList
       </h2>
-      <div class="flex justify-center items-center m-5">
+      <div class="flex justify-center items-center mx-5 mt-5">
         <iframe
           width="560"
           height="315"
@@ -56,10 +56,25 @@ import GitHub from '../components/icons/GitHub.astro';
           class="rounded-lg">
         </iframe>
       </div>
+    </SectionContainer>
 
-      <div class="flex justify-center py-20">
-        <ReturnBtn />
-      </div>
+    
+    <SectionContainer id="description">
+      <h2 
+      class="text-white/80 text-3xl ml-2 font-semibold  flex gap-x-3 items-center"> 
+      Descripción
+      </h2>
+    
+      <p class="text-white text-lg leading-relaxed pl-2 pt-2">
+        Este proyecto tiene como objetivo desarrollar una página web que permita generar cartas de forma sencilla y rápida en formato digital. Actualmente, se encuentra en fase de desarrollo, y aún queda por implementar la funcionalidad de generación y descarga de las cartas. Por el momento, la aplicación permite a los usuarios iniciar sesión y guardar sus cartas en la base de datos, incluyendo secciones y productos. Además, se planea añadir la opción de insertar imágenes en el futuro.
+      </p>
+      
+    </SectionContainer>
+    
+
+    <div class="flex justify-center py-20">
+      <ReturnBtn />
+    </div>
       
       
 
